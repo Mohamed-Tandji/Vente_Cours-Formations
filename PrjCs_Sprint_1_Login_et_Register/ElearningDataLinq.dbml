@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Bd_elearning" Class="ElearningDataLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.cours" Member="cours" AccessModifier="Internal">
+    <Type Name="cours" AccessModifier="Internal">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="titre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="noCours" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="prix" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="url" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_niveau" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="cours_cours_videos" Member="cours_videos" ThisKey="Id" OtherKey="id_cours" Type="cours_videos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.videos" Member="videos">
+    <Type Name="videos">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="titre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="url" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="img" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_niveau" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="videos_cours_videos" Member="cours_videos" ThisKey="Id" OtherKey="id_videos" Type="cours_videos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cours_videos" Member="cours_videos">
+    <Type Name="cours_videos">
+      <Column Name="id_videos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_cours" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="cours_cours_videos" Member="cours" ThisKey="id_cours" OtherKey="Id" Type="cours" IsForeignKey="true" />
+      <Association Name="videos_cours_videos" Member="videos" ThisKey="id_videos" OtherKey="Id" Type="videos" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

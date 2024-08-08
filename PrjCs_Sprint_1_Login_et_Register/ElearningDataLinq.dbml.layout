@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ElearningDataLinq">
+  <DataContextMoniker Name="/ElearningDataLinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f6ae9f96-14b2-4c0a-a083-443895b16629" absoluteBounds="0.5, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ElearningDataLinqDataContext/cours" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb16a8f7-a405-4db1-b878-ffae93d9938e" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1619a14-4bcc-46b5-8f38-9b6dc1a0163c" absoluteBounds="4.75, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/ElearningDataLinqDataContext/videos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70f3e711-e5f8-401c-bf10-e5f5a638e4ed" absoluteBounds="4.765, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dad8532c-c75b-49eb-8fb2-ba2f1629e57f" absoluteBounds="3.375, 4.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/ElearningDataLinqDataContext/cours_videos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31a8ef06-9e11-4431-aeff-87ecc5bf1dd4" absoluteBounds="3.39, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 2.90549967447917); (1.5 : 4.72199625651042); (3.375 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ElearningDataLinqDataContext/cours/cours_cours_videos" />
+      <nodes>
+        <classShapeMoniker Id="f6ae9f96-14b2-4c0a-a083-443895b16629" />
+        <classShapeMoniker Id="dad8532c-c75b-49eb-8fb2-ba2f1629e57f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0625 : 2.8381982421875); (5.0625 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ElearningDataLinqDataContext/videos/videos_cours_videos" />
+      <nodes>
+        <classShapeMoniker Id="d1619a14-4bcc-46b5-8f38-9b6dc1a0163c" />
+        <classShapeMoniker Id="dad8532c-c75b-49eb-8fb2-ba2f1629e57f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,44 @@
+﻿@model PrjCs_Sprint_1_Login_et_Register.Models.ReloginSurchargeTeacher
+@Model.id_enseignants 
+
+
+@{
+        Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>ReLogin</title>
+</head>
+<body>
+    <div>
+        <center>
+
+
+            <h1>ReLogin Teacher E-Learning </h1>
+            <h3 style="color:chartreuse"> @ViewBag.Message</h3>
+            <form style="padding-top:10%" action="/Enseignant/ReLogin">
+                <input type="text" class="form-control" name="id_enseignants" value=@Model.id_enseignants hidden>
+
+                <div class="mb-3">
+                    <label class="form-label">Votre nouveau Nom Utilisateur</label>
+                    <input type="text" class="form-control" name="Username" placeholder="Entrer votre Username" value="@Model.Username" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label id="password" placeholder="Entrer votre Password" class="form-label">Votre nouveau Password</label>
+                    <input type="password" class="form-control" name="Password" value=@Model.Password>
+                </div>
+
+                <button type="submit" id="Envoyer" class="btn btn-primary">Modifier</button>
+            </form>
+        </center>
+
+    </div>
+</body>
+</html>
